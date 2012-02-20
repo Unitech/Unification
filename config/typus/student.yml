@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Student:
+  fields:
+    default: mail, ip, lab_id
+    form: mail, ip, lab_id
+  relationships: 
+  application: Application

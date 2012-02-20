@@ -1,0 +1,8 @@
+# Use the README file as a reference to customize settings.
+
+Field:
+  fields:
+    default: title, content, lab_id
+    form: title, content, lab_id
+  relationships: 
+  application: Application
