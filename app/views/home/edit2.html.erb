@@ -1,0 +1,44 @@
+
+<%= form_for @lab, :url => update_path, :multipart => true  do |l| %>
+  <%= l.label :director_name %><br/>
+  <%= l.text_field :director_name %> <br/>
+  
+  <%= l.label :director_email %><br/>
+  <%= l.text_field :director_email %> <br/>
+  
+  
+  <%= l.label :title_lab %><br/>
+  <%= l.text_field :title_lab %><br/>
+
+  <%= l.label :description %><br/>
+  <%= l.text_area :description %><br/>
+
+
+  <%= l.label :logo %><br/>
+  <%= l.file_field :logo %><br/>
+  
+  
+
+
+
+  <%= l.fields_for :fields, @lab.fields do |builder| %>
+    <%= builder.text_field :content %>
+  <% end %>
+
+  <!-- <div id="fields"> -->
+  <!--   <h3>Fields</h3> -->
+  <!--   <ul> -->
+  <!--   <% current_lab.fields.each do |f| %> -->
+  <!--     <li> -->
+  <!-- 	<%= f.title %> -->
+  <!-- 	<%= f.content %> -->
+  <!--     </li> -->
+  <!--   <% end %> -->
+  <!--   </ul> -->
+  <!--   <div id="new_field"> -->
+  <!--     APPEND -->
+  <!--   </div> -->
+  <!-- </div> -->
+<% end %>
+
+

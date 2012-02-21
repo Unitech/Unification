@@ -1,0 +1,20 @@
+<center>
+  <h1 style="font-size : 25px; margin-bottom : 20px"><%= current_lab.title_lab %> edit</h1>
+</center>
+
+
+<div style="width : 960px; margin : 0 auto;">
+<%= semantic_form_for @lab, :url => update_path do |f| %>
+  <%= f.inputs :title_lab, :description, :logo, :director_email, :director_name %>
+ 
+  <h3>Ressources</h3>
+  <%= f.semantic_fields_for :fields do |field| %>
+    <div style="height:1px;background-color:#B9C0C3; margin-top : 10px;"></div>
+    <div style="height:1px;background-color:white; margin-bottom : 5px;"></div>
+    <%= field.inputs :title, :content %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>
+
+</div>

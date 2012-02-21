@@ -9,4 +9,17 @@ class HomeController < ApplicationController
     lab.students.create(:mail => params[:student][:lab_id], :ip => params[:remote_ip])
     redirect_to :back
   end
+  
+  def edit
+    @lab = Lab.find(current_lab.id, :include => :fields)
+    (4 - @lab.fields.count).times {
+      @lab.fields.build
+    }
+  end
+  
+  def update
+    @lab = Lab.find(current_lab.id)
+    @lab.update_attributes(params[:lab], :without_protection => true)
+    redirect_to :root
+  end
 end

@@ -10,6 +10,7 @@ gem 'typus'
 gem 'devise', '~> 2.0.1'
 gem 'typus'
 gem 'paperclip'
+gem 'formtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,0 +1,65 @@
+<div class="each-labs">
+  <% if current_lab.email == lab.email %>
+    <div id="edit-lab">
+      <%= link_to 'Edit my lab', edit_path %>
+    </div>
+  <% end %>
+  <div id="logo">
+    <% if lab.logo.presence %>
+      <%= image_tag lab.logo.url(:small), :id => 'logo' %>
+    <% else %>
+      <div id="no-image"></div>
+    <% end %>
+  </div>
+  <div id="lab-title">
+    <%= lab.title_lab %>
+    <div style="height:1px;background-color:#B9C0C3; margin-top : 10px;"></div>
+    <div style="height:1px;background-color:white;"></div>
+  </div>
+  <div id="internal-descr">
+    <div id="description" class="align-style">
+      <%= lab.description %>
+    </div>
+
+    <div style="height:1px;background-color:#B9C0C3; margin-top : 10px;"></div>
+    <div style="height:1px;background-color:white;"></div>
+
+    <div id="ressources" class="align-style">
+      <h3>Ressources</h3>
+      <ul>
+	<% lab.fields.each do |field| %>
+	  <li>
+	    <span id="field-title">
+	      <%= field.title %>
+	    </span>
+	    <span id="field-content">
+	      <%= link_to field.content, field.content %>
+	    </span>
+	  </li>
+	<% end %>
+      </ul>
+    </div>
+
+    <div style="height:1px;background-color:#B9C0C3; margin-top : 10px;"></div>
+    <div style="height:1px;background-color:white;"></div>
+
+    <div id="director" class="align-style">
+      <h3>Directeur</h3>
+      <%= lab.director_name %><br/>
+      <%= lab.director_email %>
+    </div>
+
+    <div style="height:1px;background-color:#B9C0C3; margin-top : 10px;"></div>
+    <div style="height:1px;background-color:white;"></div>
+
+    <div id="subscribe" class="align-style">
+      <h3>Newlestter</h3>
+      <%= form_for :student, :url => new_student_path, :html => {:id => 'special_form'} do |s| %>
+      <%= s.text_field :mail, :placeholder => 'Votre email' %>
+      <%= s.hidden_field :lab_id, :value => lab.id %>
+      <%= s.submit "S'inscrire" %>
+<% end %>
+</div>
+
+</div>
+</div>

@@ -22,15 +22,16 @@ body {
 
 
 #labs {
-
+    
     #internal-descr {
 	text-align : left;
 	font-size : 13px;
     }
     .each-labs {
+	position : relative;
 	float : left;
 	width : 320px;
-	height : 590px;
+	height : 628px;
 	overflow-y : hide;
 	text-align : center;
 
@@ -40,6 +41,15 @@ body {
 
 	border-bottom: 1px solid #C6C6C6;
 	border-right: 1px solid #C6C6C6;
+
+	#edit-lab {
+	    position : absolute;
+	    top : 2%;
+	    left : 2%;
+	    @include rounded(4px);
+	    @include btn-style(60px);
+	    font-size : 12px;
+	}
 
 	.align-style {
 	    padding : 5px 10px;
@@ -61,7 +71,10 @@ body {
 	    height : 50px;
 	}
 	#ressources {
-	    min-height : 150px;
+	    a {
+		color : red;
+	    }
+	    height : 170px;
 	    li {
 		margin-bottom : 8px;
 	    }
@@ -74,6 +87,9 @@ body {
 	    #field-content {
 		
 	    }
+	}
+	#director {
+	    height : 50px;
 	}
 
 	#subscribe {
